@@ -15,43 +15,43 @@ function checkResponse(result, prompt) {
             return app.viewAllEmployees(prompt);
 
         case 'VIEW_EMPLOYEES_BY_DEPARTMENT':
-            return app.viewEmployeesByDepartment();
+            return app.viewAllEmployeesByDepartment(prompt);
 
         case 'VIEW_EMPLOYEES_BY_MANAGER':
-            return app.viewEmployeesByManager();
+            return app.viewEmployeesByManager(prompt);
 
         case 'ADD_EMPLOYEE':
-            return app.addEmployee();
+            return app.addEmployee(prompt);
 
         case 'REMOVE_EMPLOYEE':
-            return app.removeEmployee();
+            return app.removeEmployee(prompt);
 
         case 'UPDATE_EMPLOYEE_ROLE':
             return app.updateEmployeeRole(prompt);
 
-        case 'UPDATE_EMPLOYEE_MANAGER':
-            return app.updateEmployeeManager();
+        // case 'UPDATE_EMPLOYEE_MANAGER':
+        //     return app.updateEmployeeManager(prompt);
     
         case 'VIEW_ROLES':
-            return app.viewRoles();
+            return app.viewRoles(prompt);
 
         case 'ADD_ROLE':
-            return app.addRole();
+            return app.addRole(prompt);
 
         case 'REMOVE_ROLE':
-            return app.removeRole();
+            return app.removeRole(prompt);
 
         case 'VIEW_DEPARTMENTS':
-            return app.viewDepartments();
+            return app.viewAllDepartments(prompt);
 
         case 'ADD_DEPARTMENT':
-            return app.addDepartment();
+            return app.addDepartment(prompt);
 
         case 'REMOVE_DEPARTMENT':
-            return app.removeDepartment();
+            return app.removeDepartment(prompt);
 
         default:
-            return quit();
+            return app.quit();
     }
 }
 
