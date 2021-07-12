@@ -2,6 +2,8 @@
 
 ![badge](https://img.shields.io/badge/license-MIT-brightgreen)<br />
 
+![preview-img](lib/assets/img/test.png)
+
 ## Description
 Usig [Mysql2 package](https://www.npmjs.com/package/mysql2), [Inquirer package](https://www.npmjs.com/package/inquirer), and [console.table package](https://www.npmjs.com/package/console.table) I have created an application where the user can have a nice friendly Command-Line UI that organize's sql query data into a nice table. Also allowing the user to manage over their ``` employee_db ```
 
