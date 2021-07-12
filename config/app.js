@@ -193,7 +193,7 @@ class App {
                 [{
                     name: 'roleId',
                     type: 'list',
-                    message: "What is your new employee's Last Name?",
+                    message: "Select Employee's Role?",
                     choices: await this.getRole()
                 }]).then(res => {
                     params.push(res.roleId.split(' ', 1));
@@ -264,8 +264,7 @@ class App {
                     const params = [roleId[0], employeeId[0]];
                     //update role
                     this.connection.query(sql, params, (err, results) => {
-                        console.log('updated!');
-                        console.table(results);
+                        console.log('Updated!');
                         //return to the prompt
                         prompt();
                     });
@@ -336,14 +335,10 @@ class App {
                     name: 'salary',
                     type: 'input',
                     message: "Enter the new Role's Salary!",
-                    validate: titleInput => {
-                        if (titleInput && typeof titleInput === 'number') {
-                        return true;
-                        } else {
-                        console.log('\n');
-                        console.log(' You need to enter a Valid Salary!');
-                        return false;
-                        }
+                    validate:  salaryInput => {
+                        //check if an actual number was entered
+                        let valid = Number.isInteger(parseInt(salaryInput));
+                        return valid || ` You need to enter a Valid Salary!`
                     }
                 }]).then(res => {
                     params.push(parseInt(res.salary.trim()));
@@ -357,7 +352,7 @@ class App {
                 }]).then(res => {
                     params.push(parseInt(res.dept.trim()));
                     this.connection.query(sql, params, (err, results) => {
-                        console.table(results);
+                        console.log(`Added new ${params[0]}`);
                         prompt();
                     });
                 })
@@ -425,7 +420,7 @@ class App {
                 [{
                     name: 'employee',
                     type: 'list',
-                    message: 'Select An Employee',
+                    message: 'Select An Employee to Remove!',
                     choices: await this.getEmployee()
                 }]).then(res => {
                     employeeId = res.employee.split(' ', 1)
