@@ -15,10 +15,10 @@ function checkResponse(result, prompt) {
             return app.viewAllEmployees(prompt);
 
         case 'VIEW_EMPLOYEES_BY_DEPARTMENT':
-            return app.viewAllEmployeesByDepartment(prompt);
+            return app.viewByDepartment(prompt);
 
-        case 'VIEW_EMPLOYEES_BY_MANAGER':
-            return app.viewEmployeesByManager(prompt);
+        // case 'VIEW_EMPLOYEES_BY_MANAGER':
+        //     return app.viewEmployeesByManager(prompt);
 
         case 'ADD_EMPLOYEE':
             return app.addEmployee(prompt);
@@ -33,7 +33,7 @@ function checkResponse(result, prompt) {
         //     return app.updateEmployeeManager(prompt);
     
         case 'VIEW_ROLES':
-            return app.viewRoles(prompt);
+            return app.viewAllRoles(prompt);
 
         case 'ADD_ROLE':
             return app.addRole(prompt);
